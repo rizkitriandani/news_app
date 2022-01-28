@@ -4,7 +4,7 @@ import 'source_model.dart';
 class ArticleModel extends Article {
   const ArticleModel({
     required int id,
-    SourceModel source,
+    required SourceModel source,
     required String author,
     required String title,
     required String description,
@@ -25,9 +25,10 @@ class ArticleModel extends Article {
         );
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
-    if (map == null) return null;
+    // if (map == null);
 
     return ArticleModel(
+      id: 0,
       source: SourceModel.fromJson(map['source'] as Map<String, dynamic>),
       author: map['author'] as String,
       title: map['title'] as String,
